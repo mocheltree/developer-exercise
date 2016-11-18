@@ -14,7 +14,23 @@ class Exercise
   # eg. the Fibonacci sequence up to 6 terms is (1, 1, 2, 3, 5, 8),
   # and the sum of its even numbers is (2 + 8) = 10
   def self.even_fibonacci(nth)
-    # TODO: Implement this method
-  end
+    return "No negative numbers" if nth < 0
+    return 0 if nth < 3
 
+    prev_prev_num = 1
+    prev_num = 1
+    even_sum = 0
+
+    3.upto(nth) do
+      add = prev_prev_num + prev_num
+
+      prev_prev_num = prev_num
+      prev_num = add
+
+      even_sum += add if add.even?
+
+    end
+
+    even_sum
+  end
 end
