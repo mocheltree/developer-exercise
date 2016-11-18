@@ -4,7 +4,9 @@ class Exercise
   # Return a string in which every word in "str" that exceeds 4 characters is replaced with "marklar".
   # If the word being replaced has a capital first letter, it should instead be replaced with "Marklar".
   def self.marklar(str)
-    # TODO: Implement this method
+    str = str.gsub(/[a-z]{5,}/,      "marklar")
+    str = str.gsub(/[A-Z][a-z]{4,}/, "Marklar")
+    str
   end
 
   # Return the sum of all even numbers in the Fibonacci sequence, up to
